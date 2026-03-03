@@ -13,8 +13,44 @@ e o maior valor e determine as posições (índices) em que esses valores ocorre
 Ao final, imprima todas as informações calculadas.*/
 
 #include <stdio.h>
+#include <stdlib.h>
+# define NumEstatico 5
+
+void CalcularValores (int *array, int n) {
+    int menor, maior, PosMenor = 0, PosMaior = 0;
+    float media;
+
+    for (int i = 0; i < n; i++){
+        if (i == 0) {
+            maior = menor = array[i];
+        } else {
+            if (array[i] > maior) {
+                maior = array[i];
+                PosMaior = i;
+            } if (array[i] < menor) {
+                menor = array[i];
+                PosMenor = i;
+            }
+        }
+    } 
+    media = (float)(menor + maior) / 2.0;
+    
+    printf("O maior valor eh %d (Na posicao %d)\n", maior, PosMaior);
+    printf("O menor valor eh %d (Na posicao %d)\n", menor, PosMenor);
+    printf("A media entre as extremidades eh %.2f\n", media);
+}
+
+
 
 int main() {
+    int escolha, n;
+    
+    printf("Digite 1 para estatico e 2 para dinamico");
+    scanf("%d", &escolha);
+
+    if(escolha == 1) {
+
+    }
 
     return 0;
 }
