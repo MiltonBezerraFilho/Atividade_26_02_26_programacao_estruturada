@@ -6,6 +6,7 @@ Ao final, informe se as duas somas são iguais ou diferentes.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #define TAMANHO 4
 
 void analizarMatriz (int matriz[TAMANHO][TAMANHO]){
@@ -20,16 +21,30 @@ void analizarMatriz (int matriz[TAMANHO][TAMANHO]){
             }
         }
     }
-    printf("A soma principal eh %d\n", somaPrincipal);
-    printf("A soma secundaria eh %d\n", somaSecundaria);
+    printf("A soma principal eh: %d\n", somaPrincipal);
+    printf("A soma secundaria eh: %d\n", somaSecundaria);
     if (somaPrincipal == somaSecundaria) {
         printf("A soma principal e a secundaria sao iguais.\n");
     } else {
-        printf("A soma princiapal e a secundaria sao diferentes.\n");
+        printf("A soma principal e a secundaria sao diferentes.\n");
     }
 }
 
 int main() {
+    int matriz[TAMANHO][TAMANHO];
+    int i, j;
+    srand(time(NULL));
 
+    for(i = 0; i < TAMANHO; i++){
+        for(j = 0; j < TAMANHO; j++){
+            matriz[i][j] = rand() % 100;
+        }
+    } 
+    for(i = 0; i < TAMANHO; i++){
+        for(j = 0; j < TAMANHO; j++){
+            printf("%d\n", matriz[i][j]);
+        }    
+    }        
+    analizarMatriz (matriz);
     return 0;
 }
