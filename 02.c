@@ -6,6 +6,8 @@ Ao final, informe se as duas somas são iguais ou diferentes.*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#define TAMANHO 4
+
 
 int main() {
 
