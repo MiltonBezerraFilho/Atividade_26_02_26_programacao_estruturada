@@ -40,17 +40,40 @@ void CalcularValores (int *array, int n) {
     printf("A media entre as extremidades eh %.2f\n", media);
 }
 
-
+void LeituraInput (int *array, int n) {
+    for (int i = 0; i < n; i++){
+        printf("Digite o valor da posicao %d: ", i);
+        scanf("%d", &array[i]);
+    }
+}
 
 int main() {
     int escolha, n;
     
-    printf("Digite 1 para estatico e 2 para dinamico");
+    printf("Digite 1 para estatico e 2 para dinamico: ");
     scanf("%d", &escolha);
 
     if(escolha == 1) {
+        int vetor[NumEstatico];
+        printf("Digite %d numeros inteiros\n", NumEstatico);
+        LeituraInput(vetor, NumEstatico);
+        CalcularValores(vetor, NumEstatico);
+    } else if (escolha == 2) {
+        printf("Digite o numeros de elementos do array: ");
+        scanf("%d", &n);
 
+        int *vetDinamico = (int *) malloc(n * sizeof(int));
+        if (vetDinamico == NULL){
+            printf("Memoria insuficiente");
+            return 1;
+        }LeituraInput(vetDinamico, n);
+        CalcularValores(vetDinamico, n);
+
+        free(vetDinamico);
+        vetDinamico = NULL;
+    } else{
+        printf("Opcao invalida.\n");
     }
-
+    
     return 0;
 }
