@@ -20,6 +20,39 @@ void printAluno(struct Aluno a) {
 }
 
 int main() {
+    int n, i, indiceMaior = 0;
+
+    printf("Digite quantos alunos vão ser cadastrados: ");
+    scanf("%d", &n);
+
+    struct Aluno *turma = (struct Aluno *) malloc(n * sizeof(struct Aluno));
+
+    if (turma == NULL) {
+        printf("Erro de memoria.\n");
+        return 1;
+    }
+
+    for (i = 0; i < n; i++) {
+        printf("Cadastro do aluno N %d\n", i + 1);
+        printf("Matricula: ");
+        scanf("%d", &turma[i].matricula);
+        printf("Nome: ");
+        scanf(" %[^\n]s", turma[i].nome);
+        printf("Nota: ");
+        scanf("%f", &turma[i].nota);
+        if (turma[i].nota > turma[indiceMaior].nota){
+            indiceMaior = i;
+        }
+    }
+    printf("\n---Lista de alunos---\n");
+    for(i = 0; i < n; i++) {
+        printAluno(turma[i]);
+    }
+
+    printf("\n---O aluno com maior nota---\n");
+    printAluno(turma[indiceMaior]);
+
+    free(turma);
 
     return 0;
 }
