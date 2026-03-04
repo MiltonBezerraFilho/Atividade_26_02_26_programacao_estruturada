@@ -18,6 +18,23 @@ enum Situacao {
 };
  
 int main() {
+    int input;
+    float nota;
+    printf("Digite 1 para inserir uma nota e 2 para encerrar o programa.\n");
+    scanf("%d", &input);
+
+    if (input == 2) {
+        printf("Programa encerrado.");
+        return 0;
+    }
+    if (input == 1) {
+        printf("Digite sua nota: ");
+        scanf("%f", &nota);
+        
+    } else {
+        printf("Valor invalido.\n");
+        return 1;
+    }
 
     return 0;
 }
