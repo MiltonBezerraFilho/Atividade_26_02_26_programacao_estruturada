@@ -20,17 +20,41 @@ enum Situacao {
 int main() {
     int input;
     float nota;
+    enum Situacao status;
+
     printf("Digite 1 para inserir uma nota e 2 para encerrar o programa.\n");
     scanf("%d", &input);
 
     if (input == 2) {
-        printf("Programa encerrado.");
+        printf("Programa encerrado.\n");
         return 0;
     }
     if (input == 1) {
         printf("Digite sua nota: ");
         scanf("%f", &nota);
-        
+
+        if(nota >= 7){
+            status = APROVADO;
+        } else if(nota >= 4){
+            status = RECUPERACAO;
+        } else{
+            status = REPROVADO;
+        }
+        switch (status)
+        {
+        case APROVADO:
+            printf("Aprovado.\n");
+            break;
+        case RECUPERACAO:
+            printf("Recuperacao.\n");
+            break;
+        case REPROVADO:
+            printf("Reprovado.\n");
+            break;
+        default:
+            printf("Valor invalido.\n");
+            break;
+        }
     } else {
         printf("Valor invalido.\n");
         return 1;
