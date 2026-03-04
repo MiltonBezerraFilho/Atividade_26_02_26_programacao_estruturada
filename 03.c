@@ -9,6 +9,16 @@ ser feita por meio de uma função.*/
 #include <stdio.h>
 #include <stdlib.h>
 
+struct Aluno {
+    int matricula;
+    char nome[50];
+    float nota;
+};
+
+void printAluno(struct Aluno a) {
+    printf("Matricula: %d | Nome: %-15s | Nota: %.2f\n", a.matricula, a.nome, a.nota);
+}
+
 int main() {
 
     return 0;
