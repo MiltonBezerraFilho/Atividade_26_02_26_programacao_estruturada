@@ -21,6 +21,10 @@ struct Produtos {
     float preco;
 };
 
+void printItens(Produtos) {
+    printf("s")
+}
+
 int main() {
     int n;
     printf("Digite o numero de produtos a serem registrados: ");
