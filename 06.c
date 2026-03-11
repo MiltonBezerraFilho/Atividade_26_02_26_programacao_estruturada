@@ -25,8 +25,18 @@ int main() {
     int n;
     printf("Digite o numero de produtos a serem registrados: ");
     scanf("%d", &n);
+    struct Produtos produtos[n];
 
-    
+    for(int i = 0; i < n; i++) {
+        printf("Digite o codigo: ");
+        scanf("%d", &produtos[i].codigo);
+        printf("Digite o nome: ");
+        scanf("%s", produtos[i].nome);
+        printf("Digite a categoria\n1 para alimento\n 2 para bebida\n 3 para limpeza: ");
+        scanf("%d", &produtos[i].tipo);
+        printf("Digite o preco: ");
+        scanf("%f", &produtos[i].preco);
+    }
 
     return 0;
 }
