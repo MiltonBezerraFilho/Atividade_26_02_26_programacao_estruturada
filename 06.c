@@ -8,7 +8,25 @@ representar a categoria e utilize uma struct para armazenar os dados. O programa
 #include <stdio.h>
 #include <stdlib.h>
 
+enum Categoria {
+    ALIMENTO,
+    BEBIDA,
+    LIMPEZA
+};
+
+struct Produtos {
+    int codigo;
+    char nome[50];
+    enum Categoria tipo;
+    float preco;
+};
+
 int main() {
+    int n;
+    printf("Digite o numero de produtos a serem registrados: ");
+    scanf("%d", &n);
+
+    
 
     return 0;
 }
